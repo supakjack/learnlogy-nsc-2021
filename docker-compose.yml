@@ -1,12 +1,12 @@
-version: '3'
+version: "3"
 services:
   proxy-service:
     container_name: proxy-service
     restart: always
     build: ./proxy-service
     ports:
-      - '3000:3000' 
-    links: 
+      - "3000:3000"
+    links:
       - consumer-database-service
       - cache-memory-service
   consumer-database-service:
@@ -18,6 +18,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
     ports:
       - 27018:27017
+    volumes:
+      - ./volumes/consumer-database-service:/data/db
   cache-memory-service:
     restart: always
     container_name: cache-memory-service
@@ -26,7 +28,18 @@ services:
       - 6379:6379
     command: ["redis-server", "--appendonly", "yes"]
     volumes:
-      - redis-data:/data
-
+      - ./volumes/cache-memory-service:/data
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=cache-memory-service
+    ports:
+      - "8081:8081"
+    links:
+      - cache-memory-service
 volumes:
-  redis-data:
+  cache-memory-service-volume:
+  consumer-database-service-volume:
