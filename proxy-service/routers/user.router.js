@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const testController = require('../controllers/user.controller')
+const userController = require('../controllers/user.controller')
+const { verifyAccessToken } = require('./../helpers/jwt_helper')
 
-router.post('/login', testController.login)
-router.post('/logout', testController.logout)
-router.post('/register', testController.regisster)
-router.post('/refresh-token', testController.refreshToken)
+router.post('/login', userController.login)
+router.post('/logout', verifyAccessToken, userController.logout)
+router.post('/register', userController.register)
+router.post('/refresh-token', verifyAccessToken, userController.refreshToken)
 
 module.exports = router

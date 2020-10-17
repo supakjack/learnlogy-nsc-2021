@@ -14,10 +14,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 const userRouter = require('./routers/user.router')
-const roleRouter = require('./routers/role.router')
 
 app.use('/user', userRouter)
-app.use('/role', roleRouter)
 
 app.use(async (req, res, next) => {
   next(createError.NotFound())

@@ -36,9 +36,8 @@ const userSchema = new schema({
     default: 'use'
   },
   role: {
-    type: schema.Types.ObjectId,
-    ref: 'role',
-    required: true
+    type: String,
+    default: 'user'
   }
 })
 

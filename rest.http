@@ -1,37 +1,35 @@
-### login 
-POST http://localhost:3000/user/login
-Content-Type: application/json
-
-{
-    "username" : "admin",
-    "password" : "123"
-}
-
-### logout
-POST http://localhost:3000/user/logout
-Content-Type: application/json
-
 ### register
 POST http://localhost:3000/user/register
 Content-Type: application/json
 
 {
-    "email" : "admin@email.co.th",
-    "username" : "admin",
-    "password" : "123"
+    "email" : "usertest3@email.co.th",
+    "username" : "usertest3",
+    "password" : "usertest@123"
+}
+### login 
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "username" : "usertest",
+    "password" : "usertest@123"
+}
+
+### logout
+POST http://localhost:3000/user/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDI5NDQwNzQsImV4cCI6MTYwMjk1MzA3NCwiYXVkIjoiNWY4YWYyYWI0MDdjMzIwMDFmZDEzZTNmIiwiaXNzIjoibGVhcm5sb2d5IHRlY25vbG9neSJ9.kQ7Xf0rMFFzzylpy6Derg1DHWfXmeRcTEhK2w9Hfspc
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDI5NDQwNzQsImV4cCI6MTYzNDUwMTY3NCwiYXVkIjoiNWY4YWYyYWI0MDdjMzIwMDFmZDEzZTNmIiwiaXNzIjoibGVhcm5sb2d5IHRlY25vbG9neSJ9.eLxh_gz8rwF3_fXkIK6H-EDIJ5Gtgr5wgA_Ls4UCHrA"
 }
 
 ### refresh-token
 POST http://localhost:3000/user/refresh-token
-
-### get all role
-GET http://localhost:3000/role/
-
-### add role
-POST http://localhost:3000/role/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDI5NDQwNzQsImV4cCI6MTYwMjk1MzA3NCwiYXVkIjoiNWY4YWYyYWI0MDdjMzIwMDFmZDEzZTNmIiwiaXNzIjoibGVhcm5sb2d5IHRlY25vbG9neSJ9.kQ7Xf0rMFFzzylpy6Derg1DHWfXmeRcTEhK2w9Hfspc
 Content-Type: application/json
 
 {
-    "name" : "admin",
-    "discription" : "role for management all resource (Biggest role)"
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDI5NDQwNzQsImV4cCI6MTYzNDUwMTY3NCwiYXVkIjoiNWY4YWYyYWI0MDdjMzIwMDFmZDEzZTNmIiwiaXNzIjoibGVhcm5sb2d5IHRlY25vbG9neSJ9.eLxh_gz8rwF3_fXkIK6H-EDIJ5Gtgr5wgA_Ls4UCHrA"
 }
