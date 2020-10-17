@@ -1,5 +1,5 @@
 ### login 
-POST http://localhost:3000/auth/login
+POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
@@ -8,11 +8,11 @@ Content-Type: application/json
 }
 
 ### logout
-POST http://localhost:3000/auth/logout
+POST http://localhost:3000/user/logout
 Content-Type: application/json
 
 ### register
-POST http://localhost:3000/auth/register
+POST http://localhost:3000/user/register
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### refresh-token
-POST http://localhost:3000/auth/refresh-token
+POST http://localhost:3000/user/refresh-token
 
 ### get all role
 GET http://localhost:3000/role/

@@ -1,0 +1,6 @@
+***
+### use this command ### docker-compose up --build -d ### use this command ###
+***
+### docker network create learnlogy-network 
+### mongodb://192.168.96.2:27017 locally mongodb network
+### check by "ping ${service name}" in container
