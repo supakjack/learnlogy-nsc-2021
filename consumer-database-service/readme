@@ -1,0 +1,16 @@
+user
+- displayName
+- username
+- password
+- email
+- role
+- createDate
+- modifiedDate
+- status
+###
+role
+- name
+- discription
+- createDate
+- modifiedDate
+- status

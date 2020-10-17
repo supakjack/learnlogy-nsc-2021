@@ -1,0 +1,5 @@
+### test get 
+GET http://localhost:3000/test
+
+### test post
+POST http://localhost:3000/test
