@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   mongodb_container:
+    container_name: consumer-database-service
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -9,6 +10,12 @@ services:
       - 27018:27017
     volumes:
       - mongodb_data_container:/data/db
+    networks:
+      - consumer-database-service
 
 volumes:
   mongodb_data_container:
+
+networks:
+  consumer-database-service:
+    name: learnlogy-network

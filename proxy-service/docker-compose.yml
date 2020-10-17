@@ -1,8 +1,15 @@
 version: "3"
 services:
   app:
-    container_name: docker-node
+    container_name: proxy-service
     restart: always
     build: .
     ports:
       - "3000:3000"
+    networks:
+      - proxy-service
+
+networks:
+  proxy-service:
+    external:
+      name: learnlogy-network
